@@ -3,359 +3,92 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Powervus - Antivirus PowerShell Avanzado</title>
-
-<!-- Google Fonts -->
+<title>Powervus - Antivirus PowerShell Rápido Mejorado</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-
 <style>
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f7fc;
-    color: #222;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    background: linear-gradient(90deg, #0066ff, #0047b3);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-
-  header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-    user-select: none;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    opacity: 0.85;
-    user-select: none;
-  }
-
-  main {
-    flex-grow: 1;
-    max-width: 900px;
-    margin: 2rem auto 3rem;
-    padding: 0 1rem;
-  }
-
-  section {
-    margin-bottom: 3rem;
-  }
-
-  section h2 {
-    color: #0047b3;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #0066ff;
-    display: inline-block;
-    padding-bottom: 0.2rem;
-  }
-
-  ul {
-    list-style: inside disc;
-    margin-top: 1rem;
-  }
-
-  ul li {
-    margin-bottom: 0.6rem;
-  }
-
-  p {
-    margin-top: 0.5rem;
-    font-size: 1.05rem;
-  }
-
-  /* Botones */
-  .button {
-    display: inline-block;
-    background-color: #0066ff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,102,255,0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    user-select: none;
-  }
-
-  .button:hover,
-  .button:focus {
-    background-color: #0047b3;
-    box-shadow: 0 6px 12px rgba(0,71,179,0.5);
-  }
-
-  pre {
-    background: #e6f0ff;
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-size: 0.9rem;
-    line-height: 1.3;
-    color: #003366;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    max-height: 500px;
-  }
-
-  code {
-    font-family: 'Source Code Pro', monospace;
-  }
-
-  /* Footer */
-  footer {
-    background: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    user-select: none;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-    main {
-      margin: 1rem auto 2rem;
-      padding: 0 1rem;
-    }
-  }
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+  body {font-family: 'Inter', sans-serif; background: #f4f7fc; color: #222; line-height: 1.6; display: flex; flex-direction: column;}
+  header {background: linear-gradient(90deg, #0066ff, #0047b3); color: white; padding: 2rem 1rem; text-align: center;}
+  header h1 {font-size: 2.8rem; font-weight: 700;}
+  header p {font-size: 1.2rem; opacity: 0.85;}
+  main {max-width: 900px; margin: 2rem auto; padding: 0 1rem; flex-grow: 1; text-align: left;}
+  section {margin-bottom: 3rem;}
+  section h2 {color: #0047b3; font-weight: 700; margin-bottom: 1rem; border-bottom: 3px solid #0066ff; display: inline-block; padding-bottom: 0.2rem;}
+  pre {background: #e6f0ff; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.9rem; line-height: 1.4; color: #003366; white-space: pre-wrap; word-wrap: break-word; max-height: 600px;}
+  code {font-family: 'Source Code Pro', monospace;}
+  footer {background: #222; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem;}
+  p {margin-bottom: 1rem;}
 </style>
 </head>
 <body>
-
 <header>
   <h1>Powervus</h1>
   <p>Antivirus PowerShell básico avanzado</p>
 </header>
-
 <main>
-  <section id="que-es">
+  <section>
     <h2>¿Qué es Powervus?</h2>
-    <p>Powervus es un antivirus sencillo pero potente creado en PowerShell, diseñado para detectar y poner en cuarentena archivos maliciosos en sistemas Windows sin necesidad de software adicional.</p>
+    <p>Powervus es un antivirus ligero y sencillo desarrollado en PowerShell para sistemas Windows. Su objetivo es detectar archivos maliciosos mediante patrones comunes en scripts y ejecutables, sin necesidad de instalar software adicional.</p>
   </section>
-
-  <section id="caracteristicas">
-    <h2>Características principales</h2>
-    <ul>
-      <li>Escaneo completo o rápido según tus necesidades</li>
-      <li>Detección basada en patrones comunes de malware</li>
-      <li>Cuidados automáticos con cuarentena para archivos sospechosos</li>
-      <li>Generación de reportes claros al finalizar el escaneo</li>
-      <li>Interfaz simple y amigable, ideal para usuarios de todos los niveles</li>
-    </ul>
+  <section>
+    <h2>Modo rápido mejorado</h2>
+    <p>Este modo realiza un escaneo rápido pero más profundo que un escaneo típico, revisando las carpetas de usuario más importantes y algunas rutas críticas del sistema, buscando patrones sospechosos en archivos ejecutables y scripts comunes.</p>
   </section>
+  <section>
+    <h2>Cómo usar Powervus</h2>
+    <p>Copiá el siguiente código, pegalo en PowerShell y ejecutalo. El antivirus iniciará automáticamente el escaneo rápido mejorado.</p>
+    <pre><code>Function Write-Log($msg) {
+    $stamp = Get-Date -Format "HH:mm:ss"
+    Write-Host "[$stamp] $msg"
+}
 
-  <section id="codigo">
-    <h2>Código completo de Powervus</h2>
-    <p>Copiá el código siguiente y pegalo en PowerShell para ejecutar Powervus directamente:</p>
-    <pre><code>
-# Powervus Antivirus - Script PowerShell autoexplicativo con lista de archivos infectados
+Function Scan-Folder($folder) {
+    $infected = @()
+    $suspicious = @(".exe", ".vbs", ".js", ".bat", ".ps1")
+    try {
+        $files = Get-ChildItem -Path $folder -Recurse -ErrorAction SilentlyContinue | Where-Object { !$_.PSIsContainer }
+        foreach ($file in $files) {
+            if ($suspicious -contains $file.Extension.ToLower()) {
+                $content = Get-Content $file.FullName -ErrorAction SilentlyContinue
+                if ($content -match "(Invoke-WebRequest|Add-MpPreference|Base64|bitsadmin|DownloadString)") {
+                    $infected += $file.FullName
+                }
+            }
+        }
+    } catch {
+        Write-Log "Error escaneando ${folder}: $_"
+    }
+    return $infected
+}
+
+Function Powervus-Scan() {
+    $rutas = @(
+        \"$env:USERPROFILE\Desktop\",
+        \"$env:USERPROFILE\Downloads\",
+        \"$env:USERPROFILE\Documents\",
+        \"$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\",
+        \"$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\"
+    )
+    $resultados = @()
+    foreach ($ruta in $rutas) {
+        $resultados += Scan-Folder $ruta
+    }
+    if ($resultados.Count -gt 0) {
+        Write-Log "Archivos sospechosos encontrados:"
+        $resultados | ForEach-Object { Write-Host \" - $_\" -ForegroundColor Red }
+    } else {
+        Write-Log "Ningún archivo sospechoso encontrado."
+    }
+}
 
 Clear-Host
-Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host "           Powervus Antivirus" -ForegroundColor Cyan
-Write-Host "    Antivirus básico avanzado en PowerShell" -ForegroundColor Cyan
-Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Bienvenido a Powervus. Este antivirus detecta y pone en cuarentena archivos sospechosos." -ForegroundColor Green
-Write-Host ""
-Write-Host "INSTRUCCIONES BÁSICAS:" -ForegroundColor Yellow
-Write-Host "- Este programa escanea archivos en tu PC buscando patrones comunes de malware." -ForegroundColor Yellow
-Write-Host "- Al detectar archivos sospechosos, los moverá a una carpeta de cuarentena." -ForegroundColor Yellow
-Write-Host "- Al finalizar, te mostrará un resumen del escaneo y la lista de archivos detectados." -ForegroundColor Yellow
-Write-Host ""
-Write-Host "Para un funcionamiento óptimo, ejecutá este script como Administrador." -ForegroundColor Yellow
-Write-Host "Si recibís errores por política de ejecución, ejecutá:" -ForegroundColor Yellow
-Write-Host "  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass" -ForegroundColor Yellow
-Write-Host ""
-Write-Host "Presioná ENTER para continuar..."
-Read-Host
-
-# --- Configuración ---
-$suspiciousExts = @(".exe", ".vbs", ".js", ".bat", ".ps1", ".cmd")
-$patterns = @(
-    "WScript.Shell",
-    "CreateObject",
-    "Invoke-Expression",
-    "Start-Process",
-    "New-Object System.Net.WebClient",
-    "Shell.Application",
-    "DownloadString",
-    "Add-Type"
-)
-$quarantineFolder = "C:\Users\$env:USERNAME\Quarantine"
-if (-not (Test-Path $quarantineFolder)) {
-    New-Item -ItemType Directory -Path $quarantineFolder | Out-Null
-}
-$logFile = "$env:USERPROFILE\antivirus_scan_log.txt"
-
-function Write-Log {
-    param([string]$message)
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    $entry = "[$timestamp] $message"
-    Add-Content -Path $logFile -Value $entry
-    Write-Host $entry
-}
-
-function Scan-Files {
-    param([System.Collections.Generic.List[System.IO.FileInfo]]$files)
-
-    $totalFiles = $files.Count
-    $infectedFiles = 0
-    $infectedList = @()
-
-    Write-Log "Archivos a escanear: $totalFiles"
-
-    foreach ($file in $files) {
-        try {
-            $content = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
-            foreach ($pattern in $patterns) {
-                if ($content -match [regex]::Escape($pattern)) {
-                    Write-Log "!!! Detectado patrón '$pattern' en archivo: $($file.FullName)"
-                    $infectedFiles++
-                    $infectedList += $file.FullName
-
-                    # Mover archivo a cuarentena
-                    $dest = Join-Path $quarantineFolder $file.Name
-                    $count = 1
-                    $baseName = [IO.Path]::GetFileNameWithoutExtension($file.Name)
-                    $ext = $file.Extension
-                    while (Test-Path $dest) {
-                        $dest = Join-Path $quarantineFolder ("$baseName" + "_$count" + "$ext")
-                        $count++
-                    }
-
-                    Move-Item -Path $file.FullName -Destination $dest -Force
-                    Write-Log "Archivo movido a cuarentena: $dest"
-                    break
-                }
-            }
-        }
-        catch {
-            Write-Log "ERROR leyendo archivo $($file.FullName): $_"
-        }
-    }
-
-    Write-Log "===================="
-    Write-Log "Escaneo finalizado."
-    Write-Log "Total de archivos escaneados: $totalFiles"
-    Write-Log "Archivos infectados detectados y puestos en cuarentena: $infectedFiles"
-
-    if ($infectedFiles -eq 0) {
-        Write-Host "`n✅ Tu PC está limpia, no se detectaron archivos sospechosos." -ForegroundColor Green
-    }
-    else {
-        Write-Host "`n⚠️ Se detectaron archivos sospechosos. Revisa la carpeta de cuarentena: $quarantineFolder" -ForegroundColor Red
-        Write-Host "`nLista de archivos infectados:" -ForegroundColor Red
-        foreach ($infectedFile in $infectedList) {
-            Write-Host " - $infectedFile" -ForegroundColor Red
-        }
-    }
-}
-
-# Menú principal
-do {
-    Clear-Host
-    Write-Host "=== Menú Powervus Antivirus ===" -ForegroundColor Cyan
-    Write-Host "1) Escaneo completo (todos los archivos de C:\)"
-    Write-Host "2) Escaneo rápido (extensiones sospechosas en carpetas comunes)"
-    Write-Host "3) Escaneo por mitad (escanea mitad alternando bloques)"
-    Write-Host "4) Salir"
-    $choice = Read-Host "Elige una opción (1, 2, 3 o 4)"
-} while ($choice -notin @("1","2","3","4"))
-
-switch ($choice) {
-    "1" {
-        Write-Log "Opción: Escaneo completo"
-        try {
-            $files = Get-ChildItem -Path "C:\" -Recurse -File -ErrorAction SilentlyContinue
-        }
-        catch {
-            Write-Log "ERROR obteniendo archivos en C:\: $_"
-            exit
-        }
-        Scan-Files $files
-    }
-    "2" {
-        Write-Log "Opción: Escaneo rápido"
-        $commonFolders = @(
-            "C:\Users\$env:USERNAME\Downloads",
-            "C:\Users\$env:USERNAME\Desktop",
-            "C:\Users\$env:USERNAME\Documents"
-        )
-        $files = @()
-        foreach ($folder in $commonFolders) {
-            if (Test-Path $folder) {
-                try {
-                    $files += Get-ChildItem -Path $folder -Recurse -File | Where-Object { $suspiciousExts -contains $_.Extension.ToLower() }
-                }
-                catch {
-                    Write-Log "ERROR obteniendo archivos en $folder: $_"
-                }
-            }
-        }
-        Scan-Files $files
-    }
-    "3" {
-        Write-Log "Opción: Escaneo por mitad"
-        try {
-            $allFiles = Get-ChildItem -Path "C:\" -Recurse -File -ErrorAction SilentlyContinue
-        }
-        catch {
-            Write-Log "ERROR obteniendo archivos en C:\: $_"
-            exit
-        }
-        $blockSize = 100
-        $filesToScan = New-Object System.Collections.Generic.List[System.IO.FileInfo]
-        for ($i = 0; $i -lt $allFiles.Count; $i += $blockSize) {
-            $block = $allFiles[$i..([math]::Min($i + $blockSize - 1, $allFiles.Count - 1))]
-            $blockIndex = [math]::Floor($i / $blockSize)
-            if ($blockIndex % 2 -eq 0) {
-                $filesToScan.AddRange($block)
-            }
-        }
-        Scan-Files $filesToScan
-    }
-    "4" {
-        Write-Host "Gracias por usar Powervus. ¡Cuida tu PC!" -ForegroundColor Cyan
-        exit
-    }
-}
-    </code></pre>
-  </section>
-
-  <section id="como-usar">
-    <h2>Cómo usar Powervus</h2>
-    <p>Para ejecutar el antivirus, simplemente copialo y pegalo en PowerShell. Te recomendamos abrir PowerShell como administrador para un escaneo óptimo.</p>
-    <p>Si PowerShell bloquea la ejecución de scripts, podés usar este comando para permitirla temporalmente:</p>
-    <pre><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></pre>
+Write-Host "=== Powervus Antivirus - Escaneo rápido mejorado ===" -ForegroundColor Cyan
+Powervus-Scan
+</code></pre>
   </section>
 </main>
-
 <footer>
   <p>© 2025 Powervus Antivirus. Todos los derechos reservados.</p>
 </footer>
-
 </body>
 </html>
